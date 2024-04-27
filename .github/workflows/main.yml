@@ -17,3 +17,15 @@ jobs:
           wget https://github.com/log0div0/testo/releases/download/v3.6.8/testo-nn-server-3.6.8.deb
           sudo dpkg -i testo-3.6.8.deb testo-nn-server-3.6.8.deb
           sudo testo version
+  ubuntu_intallation:
+    runs-on: ubuntu-latest
+    needs: setup_testo
+    steps:
+      - name: Install Ubuntu ISO
+        run: |
+          sudo mkdir -p /opt/iso
+          wget -O /opt/iso/ubuntu_server.iso https://releases.ubuntu.com/16.04/ubuntu-16.04.7-server-amd64.iso
+          ls
+          sudo testo run ./ubuntu_installation.testo
+          
+  
