@@ -8,11 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install DEPS
-        run: >-
+        run: |
           apt update
           apt install libvirt0 libvirt-clients libvirt-daemon-system libguestfs0 qemu qemu-kvm ebtables dnsmasq-base
       - name: Install testo framework
-        run: >-
+        run: |
           wget https://github.com/log0div0/testo/releases/download/v3.6.8/testo-3.6.8.deb
           wget https://github.com/log0div0/testo/releases/download/v3.6.8/testo-nn-server-3.6.8.deb
           dpkg -i testo-3.6.8.deb testo-nn-server-3.6.8.deb
